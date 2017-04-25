@@ -1,0 +1,38 @@
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: -20px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+
+}
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.round {
+    display:  inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin-left: 200px;
+    text-align:center;
+    background-position: center center;
+    background-image: url(../img/portfolio-1.jpg);
+    margin-top: 100px;
+}
+.round img {
+    display:  inline-block;
+    /* Stretch
+          height: 100%;
+          width: 100%; */
+    min-width: 100%;
+    min-height: 100%;
+}

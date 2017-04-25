@@ -1,0 +1,56 @@
+a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.tab .nav-tabs{
+    position: relative;
+    border-bottom: 0 none;
+    background: #fff;
+}
+.tab .nav-tabs li{
+    text-align: center;
+    margin-right: 0;
+}
+.tab .nav-tabs li a{
+    font-size: 15px;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    background: #fff;
+    margin-right: 0;
+    border-radius: 0;
+
+    position: relative;
+    transition: all 0.5s ease 0s;
+}
+.tab .nav-tabs li:last-child a,
+.tab .nav-tabs li:last-child.active a,
+.tab .nav-tabs li:last-child a:hover{
+    border-right: 1px solid #ddd;
+}
+.tab .nav-tabs li a:hover,
+.tab .nav-tabs li.active a{
+    color: #744cb0;
+    border-bottom: 2px solid #744cb0;
+    border-right: none;
+}
+.tab .tab-content{
+    font-size: 14px;
+    color: #6f6c6c;
+    line-height: 26px;
+    padding: 20px 10px;
+    margin-top: 10px;
+}
+.tab .tab-content h3{
+    font-size: 24px;
+    color: #6f6c6c;
+    margin-top: 0;
+}
+@media only screen and (max-width: 480px){
+    .tab .nav-tabs li{
+        width: 100%;
+        border-right: 1px solid #ddd;
+        margin-bottom: 8px;
+    }
+}
