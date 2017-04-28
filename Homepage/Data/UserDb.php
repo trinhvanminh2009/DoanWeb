@@ -25,6 +25,29 @@ class UserDb{
         $conn->closeConnect();
         return $user;
     }
+    public function getAllUserName(){
+        $conn=new Connection();
+        $con=$conn->connect();
+        $result=$con->query("Select username from user");
+        $list=array();
+        while($row=$result->fetch_array()){
+            $username=$row['username'];
+            array_push($list,$username);
+        }
+        $conn->closeConnect();
+        return $list;
+    }
 
+    function getAvatarByUserName($username)
+    {
+        $conn=new Connection();
+        $con=$conn->connect();
+        $result=$con->query("Select avatar from user where username = '$username'");
+
+        $row=$result->fetch_array();
+        $avatar = $row['avatar'];
+        $conn->closeConnect();
+        return $avatar;
+    }
 }
 ?>

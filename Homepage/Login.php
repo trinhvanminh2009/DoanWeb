@@ -80,7 +80,7 @@
                 <div class="col-sm-6 col-sm-offset-3 social-login">
                     <h3 style="color: green">...or login with:</h3>
                     <div class="social-login-buttons">
-                        <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                        <a class="btn btn-link-1 btn-link-1-facebook" href="https://www.facebook.com/dialog/oauth?client_id=415135538841889&redirect_uri=http://localhost:8080/DoanWeb/Homepage/callback.php&scope=public_profile">
                             <i class="fa fa-facebook"></i> Facebook
                         </a>
 

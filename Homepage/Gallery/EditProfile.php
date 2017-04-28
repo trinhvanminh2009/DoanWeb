@@ -70,6 +70,7 @@ if(isset($_POST['upload']))
                     <?php
                         echo '<img src="data:image/jpeg;base64,'.base64_encode($user->getAvatar()) .'" class="img-circle" alt="Cinque Terre" width="100" height="100" id ="avatar" style="margin-left: 15px"/>';
                     ?>
+
                     <h6>Upload a different photo...</h6>
                     <input type="file" id ="image"  name = "image" onchange="checkPreviewAndSize()" accept=".png, .jpg, .jpeg">
                     <h5 id = "messageSize" style="color: red; font-style: italic"></h5>

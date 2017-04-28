@@ -55,7 +55,7 @@
             <a href="#about" onclick=$("#menu-close").click();>About</a>
         </li>
         <li>
-            <a href="#services" onclick=$("#menu-close").click();>Services</a>
+            <a href="#services" onclick=$("#menu-close").click();>Login</a>
         </li>
         <li>
             <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
@@ -126,7 +126,7 @@
                 <br>
                 <ul class="list-inline">
                     <li>
-                        <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        <a href="https://www.facebook.com/minh.trinh.52493"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>

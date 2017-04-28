@@ -1,4 +1,11 @@
-
+<?php
+/**
+ * Created by PhpStorm.
+ * User: azaudio
+ * Date: 4/25/2017
+ * Time: 12:42 AM
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,39 +45,9 @@
     <![endif]-->
 
 </head>
-
-<body>
-
 <?php
-include_once "header.php"
+    require "header.php";
 ?>
-<!-- Navigation -->
-
-<header id="top" class="header" style="background-image: url(img/bg.jpg)">
-
-
-    <div>
-        <table>
-
-            <tr>
-                <td >
-                    <?php
-                    echo '<img src="data:image/jpeg;base64,'.base64_encode($user->getAvatar()) .'" class="img-circle" alt="Cinque Terre" width="90" height="90" style="margin-top: 100px; margin-left: 100px"/>';
-                    ?>
-                </td>
-                <td>
-                    <label style="color:white;font-size: x-large;margin-top: 120px;margin-left: 10px; "><?php echo $user->getFristName() ." ". $user->getLastname()?></label>
-                </td>
-                <td>
-
-                </td>
-
-            </tr>
-        </table>
-    </div>
-
-</header>
-
 <!-- Page Content -->
 <div class="container">
     <div clas="row">
@@ -80,24 +57,15 @@ include_once "header.php"
                     <div class="tab" role="tabpanel">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Photostream</a></li>
-                            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Section 2</a></li>
-                            <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Section 3</a></li>
-                            <li role="presentation" style="float: right"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Section 4</a></li>
+                            <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Explore</a></li>
                         </ul>
                         <hr>
                         <!-- Tab panes -->
                         <div class="tab-content tabs">
                             <div role="tabpanel" class="tab-pane fade in active" id="Section1">
-                                <h3>Photostream</h3>
-                                <?php require"Photostream.php" ?>
+                                <h3>All Image</h3>
+                                <?php require "AllUserPicture.php"?>
 
-                                <div class="row">
-
-
-
-
-                                </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section2">
                                 <h3>Section 2</h3>
@@ -124,28 +92,10 @@ include_once "header.php"
     <footer>
         <div class="row">
             <div class="col-lg-12">
-
+                <p>Copyright &copy; Your Website 2014</p>
             </div>
         </div>
     </footer>
 
 </div>
 <!-- /.container -->
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#btnPopover').popover();
-    });
-
-
-</script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-
-</body>
-
-</html>
