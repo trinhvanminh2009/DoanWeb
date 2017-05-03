@@ -17,11 +17,12 @@
     <script>
         Dropzone.options.uploads = {
             acceptedFiles:".png,.jpg,.bmp,.gif,.ico",
-            maxFilesize:12
+            maxFilesize:7
 
         };
 
     </script>
+
 
 </head>
 <body>

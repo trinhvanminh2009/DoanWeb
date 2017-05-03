@@ -1,4 +1,13 @@
 <?php
+include "../Data/UserDb.php";
+session_start();
+if(isset($_SESSION['username']))
+{
+    $username = $_SESSION['username'];
+
+}
+$test=new UserDb();
+$user=$test->getUserByUN("$username");
 /**
  * Created by PhpStorm.
  * User: azaudio
@@ -45,11 +54,10 @@
     <![endif]-->
 
 </head>
-<?php
-    require "header.php";
-?>
+<body>
+
 <!-- Page Content -->
-<div class="container">
+<div class="container" >
     <div clas="row">
         <div class="container">
             <div class="row">
@@ -64,7 +72,9 @@
                         <div class="tab-content tabs">
                             <div role="tabpanel" class="tab-pane fade in active" id="Section1">
                                 <h3>All Image</h3>
-                                <?php require "AllUserPicture.php"?>
+                                <?php
+                                include_once "AllUserPicture.php";
+                                ?>
 
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section2">
@@ -99,3 +109,8 @@
 
 </div>
 <!-- /.container -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+</body>

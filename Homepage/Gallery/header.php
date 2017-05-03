@@ -8,6 +8,7 @@ if(isset($_SESSION['username']))
 }
 $test=new UserDb();
 $user=$test->getUserByUN("$username");
+
 /**
  *
  * Created by PhpStorm.
@@ -49,7 +50,7 @@ $user=$test->getUserByUN("$username");
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+    <div class="container" >
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -58,11 +59,11 @@ $user=$test->getUserByUN("$username");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">You</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <a class="navbar-brand" href="index.php">You</a>
                 <li>
                     <a href="Explore.php">Explorer</a>
                 </li>
@@ -76,9 +77,11 @@ $user=$test->getUserByUN("$username");
 
                 <li>
                     <a href="#">
-                        <div class="form-group has-feedback" style="margin-left: 400px">
-                            <input type="text" placeholder="Photos, people, or groups" class="form-control" id="inputSuccess2"/>
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        <div class="form-group has-feedback"  style="margin-left: 350px">
+
+                                <input type="text" placeholder="Photos, people, or groups" name="searchImage"  class="form-control fa-search" />
+
+
                         </div>
                     </a>
                 </li>
@@ -120,13 +123,14 @@ $user=$test->getUserByUN("$username");
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
+<script src="js/HandleSearch.js"></script>
+
 <script>
     $(document).ready(function () {
         $('#btnPopover').popover();
     });
-
-
 </script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

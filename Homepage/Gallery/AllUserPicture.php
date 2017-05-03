@@ -1,3 +1,12 @@
+<?php
+if(isset($_SESSION['username']))
+{
+    $usernameHeader = $_SESSION['username'];
+}
+$test=new UserDb();
+$userHeader=$test->getUserByUN("$usernameHeader");
+?>
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html lang="en">
@@ -86,6 +95,79 @@ $listuser=$UserDB->getAllUserName();
 $Image=new ImageDb();
 
 $userinsession=$username;
+?>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container" >
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <a class="navbar-brand" href="index.php">You</a>
+                <li>
+                    <a href="Explore.php">Explorer</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+
+
+                <li>
+                    <a href="#">
+                        <div class="form-group has-feedback"  style="margin-left: 350px">
+                            <form action="Explore.php" method="post">
+                                <input type="text" placeholder="Photos, people, or groups" name="searchImage"  class="form-control fa-search" />
+                            </form>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+
+                </li>
+                <li>
+                    <a href="Upload.php">
+                        <img src="img/upload_cloud.png" >
+                    </a>
+                </li>
+                <li>
+                    <img src="img/notifycation_icon.png" style="margin-top: 15px ; margin-left: 10px">
+                </li>
+                <li>
+                    <a  id ="btnPopover" title="<h4>Labdien, Ways of love</h4> <h5>Now you know how to greet people in Latvian</h5> "  data-placement="bottom" data-content="
+                    <div id='myProgress' style='width: 250px;background-color: #ddd'>
+                                    <div id='myBar' style='width: 20%;height: 5px;background-color: #4CAF50'></div>
+                                </div>
+                                  <h6 style='text-align: center'>Using 20% of 1GB</h6>
+                                            <a href='#'>Help</a>
+                                            <a href ='EditProfile.php' style='text-align: center; margin-left:30%'>Settings</a>
+                                             <a href ='../index.php' style='text-align: center; margin-left:10%'>Sign out</a>"
+
+                        data-html ="true"  data-toggle="popover" >
+                        <?php
+                        echo '<img src="data:image/jpeg;base64,'.base64_encode($userHeader->getAvatar()) .'" class="img-circle" alt="Cinque Terre" width="40" height="40" style="margin-left: 15px"/>';
+                        ?>
+                    </a>
+
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<?php
 if(isset($_POST['comments'])){
     $UserName=$userinsession;
     $content=$_POST['comments'];
@@ -101,7 +183,7 @@ if(isset($_POST['comments'])){
     <table>
         <tr>
             <form name='dropdownform' method='post'>
-                <td><label style="font-size: larger">Sort by date</label></td>
+                <td><label style="font-size: larger">Sort by date </label></td>
                 <td>   <select class='form-control' name='sortbydate' onchange='this.form.submit()'>
                         <option>Select a type you want sort</option>
                         <option value='ASC'>ASC</option>
@@ -132,6 +214,16 @@ if(isset($_POST['comments'])){
             }
         }
 
+        if(isset($_POST['searchImage']))
+        {
+            $imageName = $_POST['searchImage'];
+
+            $list = $Image->getAllImageByName($imageName);
+        }
+
+
+
+
         foreach ($list as $img) {
         $url = $img->getUrl();
         $imgId = $img->getImageID();
@@ -143,9 +235,12 @@ if(isset($_POST['comments'])){
         } else {
             $a = 0;
         }
+
+
         echo "    <script>
         
         jQuery(function ($) {
+       
        
          
          
@@ -323,7 +418,11 @@ if(isset($_POST['comments'])){
 
 
 
-
+<script>
+    $(document).ready(function () {
+        $('#btnPopover').popover();
+    });
+</script>
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 

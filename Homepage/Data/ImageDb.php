@@ -52,5 +52,35 @@ Class ImageDb{
         $conn->closeConnect();
         return $list;
     }
+
+    public function getImageByName($ImageName,$Username){
+        $conn=new Connection();
+        $con=$conn->connect();
+        $result=$con->query("Select * from Image WHERE username='$Username'and  Name LIKE '%$ImageName%' ");
+        $list=array();
+        while ($row = $result->fetch_array())
+        {
+            $img=new Image($row['ImageID'],$row['Name'],$row['Desciption'],$row['Topic'],$row['DateUpdated'],$row['Url'],$row['Username']);
+            array_push($list,$img);
+        }
+        $conn->closeConnect();
+        return $list;
+    }
+
+    public function getAllImageByName($ImageName){
+        $conn=new Connection();
+        $con=$conn->connect();
+        $result=$con->query("Select * from Image WHERE Name LIKE '%$ImageName%' ");
+        $list=array();
+        while ($row = $result->fetch_array())
+        {
+            $img=new Image($row['ImageID'],$row['Name'],$row['Desciption'],$row['Topic'],$row['DateUpdated'],$row['Url'],$row['Username']);
+            array_push($list,$img);
+        }
+        $conn->closeConnect();
+        return $list;
+    }
+
+
 }
 ?>

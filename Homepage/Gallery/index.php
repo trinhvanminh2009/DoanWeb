@@ -1,4 +1,14 @@
+<?php
+include "../Data/UserDb.php";
+session_start();
+if(isset($_SESSION['username']))
+{
+    $username = $_SESSION['username'];
 
+}
+$test=new UserDb();
+$user=$test->getUserByUN("$username");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +43,6 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <script src="js/ca-pub-3311815518700050.js"></script>
-    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <![endif]-->
 
@@ -41,9 +50,7 @@
 
 <body>
 
-<?php
-include_once "header.php"
-?>
+
 <!-- Navigation -->
 
 <header id="top" class="header" style="background-image: url(img/bg.jpg)">
@@ -134,13 +141,7 @@ include_once "header.php"
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#btnPopover').popover();
-    });
 
-
-</script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
