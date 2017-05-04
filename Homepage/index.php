@@ -126,13 +126,13 @@
                 <br>
                 <ul class="list-inline">
                     <li>
-                        <a href="https://www.facebook.com/minh.trinh.52493"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        <a href="https://www.facebook.com/minh.trinh.52493"><i class="fa fa-facebook-square fa-fw fa-3x"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        <a href="https://github.com/trinhvanminh2009"><i class="fa fa-github fa-fw fa-3x"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        <a href="https://www.flickr.com/photos/147362186@N03/"><i class="fa fa-flickr fa-fw fa-3x"></i></a>
                     </li>
                 </ul>
                 <hr class="small">

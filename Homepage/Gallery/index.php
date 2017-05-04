@@ -88,9 +88,9 @@ $user=$test->getUserByUN("$username");
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Photostream</a></li>
-                            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Section 2</a></li>
-                            <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Section 3</a></li>
-                            <li role="presentation" style="float: right"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Section 4</a></li>
+                            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Album</a></li>
+                            <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Favorites</a></li>
+                            <li role="presentation" style="float: right"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">More</a></li>
                         </ul>
                         <hr>
                         <!-- Tab panes -->

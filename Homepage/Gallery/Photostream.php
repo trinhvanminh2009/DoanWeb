@@ -37,7 +37,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="font-awesome/css/font-awesome.css">
     <link href="./css/fbphotobox.css" rel="stylesheet" type="text/css" />
-
+    <link href="./css/likehover.css" rel="stylesheet" type="text/css"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,7 +94,9 @@ $userHeader=$test->getUserByUN("$usernameHeader");
 
     include "../Data/ImageDb.php";
     include_once "../Data/CommentDb.php";
+    include_once "../Data/likeDb.php";
     $Image=new ImageDb();
+    $likeDb=new LikeDb();
     $user=$username;
     $list=$Image->geImageByUN($user);
 
@@ -207,7 +209,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
     <table>
         <tr>
             <form name='dropdownform' action='index.php' method='post'>
-            <td><label style="font-size: larger">Sort by date</label></td>
+            <td><label style="font-size: larger">Sort by date:  </label></td>
+
             <td>   <select class='form-control' name='sortbydate' onchange='this.form.submit()'>
                     <option>Select a type you want sort</option>
                     <option value='ASC'>ASC</option>
@@ -255,7 +258,31 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                 setTimeout( function () { 
                     this.submit();
                 }, 3000000);
-            }); 
+            });
+             $('#like<?php echo $imgId ?>').on('click',function() {
+                 $('#like<?php echo $imgId ?>').hide();
+                 $.post('like.php',{ImageID:$('#ImageID<?php echo $imgId ?>').val(),UserName:$('#username').val()},
+                     function (data) {
+                         {
+                             $('#unlike<?php echo $imgId ?>').show();
+                             console.log(data);
+                         }
+                     });
+
+
+             })
+             $('#unlike<?php echo $imgId ?>').on('click',function() {
+                 $('#unlike<?php echo $imgId ?>').hide();
+                 $.post('unlike.php',{ImageID:$('#ImageID<?php echo $imgId ?>').val(),UserName:$('#username').val()},
+                     function (data) {
+                         {
+                             $('#like<?php echo $imgId ?>').show();
+                             console.log(data);
+                         }
+                     });
+
+
+             })
             $('#photo<?php echo $imgId ?>').on('click',function(){
                 $.post('submit.php',{ImageID:$('#ImageID<?php echo $imgId ?>').val()},
                        function (data) {
@@ -285,14 +312,65 @@ $userHeader=$test->getUserByUN("$usernameHeader");
            
     </script>
     <?php
-
-        echo"<form id='target' method='get'>";
+        echo "<form id='target' method='get'>";
         echo "<input type='hidden'id='ImageID$imgId' name='ImageID' value='$imgId'>";
-        echo "</form>";
-        echo"<div class=\"col-lg-3 col-md-4 col-xs-6 thumb\">";
-        echo"	<div class='fbphotobox' id='photo'>
-                <a  class='aaf' id='photo$imgId'><img class='photo' fbphotobox-src='../../uploads/$user/$url'
-         src='../../uploads/$user/$url'></a></div>";
+        echo "<input type='hidden' id='username' value='$user'>";
+        echo "<div class='col-lg-3 col-md-4 col-xs-6 thumb'>";
+        echo "
+            <div class='view effect'>  
+               <div class='fbphotobox' id='photo'>
+                <a class='aaf' id='photo$imgId'><hr><img class='photo' fbphotobox-src='../../uploads/$user/$url'
+         src='../../uploads/$user/$url'></a></div>
+          <div class='mask' >
+              <menuitem label=\"Refresh\">  
+" ;
+        $listImageLiked=$likeDb->getUserLikedImage($user);
+        $liked=false;
+        foreach ($listImageLiked as $itemliked){
+            if($itemliked==$imgId){
+                $liked=true;
+            }
+        }
+        if($liked==true){
+            echo"
+                <table cellpadding='10'>
+                    <tr>
+                        <td style=\"padding-right:50px\">   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+                </a>
+                <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
+                </a></td>
+                 <td ><a download='$imgId' href='../../uploads/$user/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
+                    </tr>
+                </table>
+               ";
+        }
+        else{
+            echo"
+                <table >
+                    <tr>
+                        <td style=\"padding-right:50px\">   <a id='like$imgId'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+                </a>
+                <a id='unlike$imgId' style='display: none'>  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
+                </a></td>
+                <td ><a download='$imgId' href='../../uploads/$user/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
+                    </tr>
+                </table>";
+        }
+        echo" 
+            
+              </menuitem>
+   
+              </menu>
+     
+              
+        
+        </div>  
+          <div class=\"content\">  
+      
+          </div>  
+        </div>   
+	";
+        echo "</form>";;
         echo "<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
               <div class=\"modal-dialog\" role=\"document\">
                 <div class=\"modal-content\">
