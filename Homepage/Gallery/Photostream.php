@@ -213,8 +213,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
 
             <td>   <select class='form-control' name='sortbydate' onchange='this.form.submit()'>
                     <option>Select a type you want sort</option>
-                    <option value='ASC'>ASC</option>
-                    <option value='DESC'>DESC</option>
+                    <option value='ASC'>Ascending</option>
+                    <option value='DESC'>Descending</option>
                 </select></td>
             </form>
         </tr>
@@ -340,6 +340,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
                  <td ><a download='$imgId' href='../../uploads/$user/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
+                 <td ><a  href='ImageInformation.php?id=$imgId&user=$user'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
+
                     </tr>
                 </table>
                ";
@@ -353,6 +355,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                 <a id='unlike$imgId' style='display: none'>  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
                 <td ><a download='$imgId' href='../../uploads/$user/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
+                  <td ><a  href='ImageInformation.php?id=$imgId&user=$user'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
+
                     </tr>
                 </table>";
         }

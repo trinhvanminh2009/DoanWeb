@@ -29,6 +29,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
+        <link href="css/ProfileImage.css" rel="stylesheet">
+
     <link href="css/Gallery.css" rel="stylesheet">
     <link href="css/tabbar.css" rel="stylesheet">
     <link href="css/commentbox.css" rel="stylesheet">
@@ -97,6 +99,14 @@ $Image=new ImageDb();
 $likeDb=new LikeDb();
 $userinsession=$username;
 ?>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+         This is a test
+        </div>
+    </div>
+</div>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container" >
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -187,8 +197,8 @@ if(isset($_POST['comments'])){
                 <td><label style="font-size: larger">Sort by date </label></td>
                 <td>   <select class='form-control' name='sortbydate' onchange='this.form.submit()'>
                         <option>Select a type you want sort</option>
-                        <option value='ASC'>ASC</option>
-                        <option value='DESC'>DESC</option>
+                        <option value='ASC'>Ascending</option>
+                        <option value='DESC'>Descending</option>
                     </select></td>
             </form>
         </tr>
@@ -318,6 +328,7 @@ if(isset($_POST['comments'])){
         })(jQuery);
            
     </script>";
+
             echo "<form id='target' method='get'>";
             echo "<input type='hidden'id='ImageID$imgId' name='ImageID' value='$imgId'>";
             echo "<input type='hidden' id='username' value='$userinsession'>";
@@ -346,6 +357,7 @@ if(isset($_POST['comments'])){
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
                  <td ><a download='$imgId' href='../../uploads/$user1/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
+                  <td ><a  href='ImageInformation.php?id=$imgId&user=$user1'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
                     </tr>
                 </table>
                ";
@@ -359,6 +371,9 @@ if(isset($_POST['comments'])){
                 <a id='unlike$imgId' style='display: none'>  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
                 <td ><a download='$imgId' href='../../uploads/$user1/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
+                <td>
+                  <td ><a  href='ImageInformation.php?id=$imgId&user=$user1'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
+                </td>
                     </tr>
                 </table>";
             }
@@ -368,14 +383,14 @@ if(isset($_POST['comments'])){
    
               </menu>
      
-              
-        
+    
         </div>  
           <div class=\"content\">  
       
           </div>  
         </div>   
 	";
+
             echo "</form>";
         echo "<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
               <div class=\"modal-dialog\" role=\"document\">
