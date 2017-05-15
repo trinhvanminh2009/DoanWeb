@@ -152,17 +152,18 @@ if(isset($_GET['id']) && isset($_GET['user']))
                             background-color: #1bba6c;
                             overflow: hidden;
                             width: 0;
-                            height: 300px;
+                            height: 350px;
                             transition: .5s ease;
                         }
                         .containerImage:hover .overlayImage {
-                            width: 50%;
+                            width: 55%;
                             left: 0;
                         }
                     </style>
                 <?php
                     $camera = cameraUsed($dir);
                     echo "<img src='img/Android-100.png'>" . $camera['make'] . " " . $camera['model'] . "<br />";
+                    echo "<img src='img/Picture-24.png'>" .$imageName ." ". "<br>";
                     echo "<img src='img/Width-24.png'>"." $data[0]"." pixel <br />";
                     echo "<img src='img/Height-24.png'>"." $data[1]". " pixel <br />";
                     echo "<img src='img/Micro%20SD-24.png'>". $filesize. " kb"."<br>";
@@ -182,15 +183,16 @@ if(isset($_GET['id']) && isset($_GET['user']))
                             background-color: #1bba6c;
                             overflow: hidden;
                             width: 0;
-                            height: 100px;
+                            height: 150px;
                             transition: .5s ease;
                         }
                         .containerImage:hover .overlayImage {
-                            width: 20%;
+                            width: 35%;
                             left: 0;
                         }
                     </style>
                     <?php
+                    echo "<img src='img/Picture-24.png'>" .$imageName ." ". "<br>";
                     echo "<img src='img/Width-24.png'>"." $data[0]"." pixel <br />";
                     echo "<img src='img/Height-24.png'>"." $data[1]". " pixel <br />";
                     echo "<img src='img/Micro%20SD-24.png'>". $filesize. " kb"."<br>";

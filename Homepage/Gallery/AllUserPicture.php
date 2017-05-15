@@ -358,7 +358,9 @@ if(isset($_POST['comments'])){
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
                  <td ><a download='$imgId' href='../../uploads/$user1/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
-                  <td ><a  href='ImageInformation.php?id=$imgId&user=$user1'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
+                  <td ><a  href='ImageInformation.php?id=$imgId&user=$user1'><img  src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
+                    
+</td>
                     </tr>
                 </table>
                ";
@@ -515,8 +517,6 @@ if(isset($_POST['comments'])){
 
 
 
-
-
 <script>
     $(document).ready(function () {
         $('#btnPopover').popover();
@@ -525,6 +525,8 @@ if(isset($_POST['comments'])){
 
 
 </script>
+
+
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 

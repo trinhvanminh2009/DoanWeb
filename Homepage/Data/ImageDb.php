@@ -81,6 +81,18 @@ Class ImageDb{
         return $list;
     }
 
+    public function updateDescription($imageID , $description)
+    {
+        $conn = new Connection();
+        $con = $conn->connect();
+        $sql = "UPDATE `image` SET `Desciption` = '$description' WHERE `image`.`ImageID` = '$imageID';";
+        if ($con->query($sql) === TRUE) {
+
+        } else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+        }
+        $conn->closeConnect();
+    }
 
 }
 ?>
