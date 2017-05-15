@@ -46,7 +46,7 @@ class CommentDb
         $sql="INSERT INTO comments (CommentsID,Username,ImageID,Content) 
         VALUES ('$commentId','$Username','$ImageID','$Content')";
         if ($con->query($sql) === TRUE) {
-            echo "New record created successfully";
+
         } else {
             echo "Error: " . $sql . "<br>" . $con->error;
         }

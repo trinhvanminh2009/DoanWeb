@@ -48,6 +48,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
     <script src="js/ca-pub-3311815518700050.js"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/jquery-1.12.0.min.js"></script>
+
     <![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
@@ -418,8 +419,9 @@ if(isset($_POST['comments'])){
                             $Date
                         </td>
                     </tr>
-                    <td><Label>Decription:</Label></td>
+                   
                     <td><label>$Decription</label></td>
+                   
                     <tr>
             
                     </tr>
@@ -428,12 +430,18 @@ if(isset($_POST['comments'])){
                 ";
 
         echo " 
- 
+                 
         
            <div class='container' style='background-color: white' id='v'>
             <div class='row'>
             <div class='col-md-3'>
-                    <label>Text you comment here!</label>
+                    <button onclick='showEditc()' id='showDiv' class='fa fa fa-times'>Edit Description</button>
+                    <div class='resume' id = 'edit'>
+                    <input type='text' placeholder='Enter your description here!'>
+                    </div>
+                    <br>
+                    <button onclick='showEditc()'>Edit Description</button>
+                    <label>Text you comment here !</label>
                     <form method='post' id='commentform'>
                             <input type='hidden' name='CommentImageID' value='$imgId'>
                           <textarea placeholder=\"comment here\"  row='5' cols='45' name='comments' id='comments' display:none data-dismiss='modal'></textarea>
@@ -513,6 +521,9 @@ if(isset($_POST['comments'])){
     $(document).ready(function () {
         $('#btnPopover').popover();
     });
+
+
+
 </script>
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
@@ -520,6 +531,7 @@ if(isset($_POST['comments'])){
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+
 
 </body>
 

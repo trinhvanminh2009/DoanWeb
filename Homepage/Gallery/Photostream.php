@@ -149,7 +149,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                     <img src="img/notifycation_icon.png" style="margin-top: 15px ; margin-left: 10px">
                 </li>
                 <li>
-                    <a  id ="btnPopover" title="<h4>Labdien, Ways of love</h4><h5>Now you know how to greet people in Latvian</h5> "  data-placement="bottom" data-content="
+                    <a  id ="btnPopover1" title="<h4>Labdien, Ways of love</h4> <h5>Now you know how to greet people in Latvian</h5> "  data-placement="bottom" data-content="
                     <div id='myProgress' style='width: 250px;background-color: #ddd'>
                                     <div id='myBar' style='width: 20%;height: 5px;background-color: #4CAF50'></div>
                                 </div>
@@ -178,9 +178,16 @@ $userHeader=$test->getUserByUN("$usernameHeader");
     if(isset($_POST['comments'])){
         $UserName=$username;
         $content=$_POST['comments'];
-        $commentImage = $_POST['CommentImageID'];
-        $insertcomment=new CommentDb();
-        $insertcomment->insertComment($UserName,$commentImage,$content);
+        if($content != '')
+        {
+            $commentImage = $_POST['CommentImageID'];
+            $insertcomment=new CommentDb();
+            $insertcomment->insertComment($UserName,$commentImage,$content);
+
+
+        }
+
+
 
     }
     if(isset($_POST['sortbydate'])){
@@ -288,7 +295,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                        function (data) {
                        {               
                             imgId=data;
-                            $('.fbphotobox-image-content').load('Explore.php #abc'+data);
+                            $('.fbphotobox-image-content').load('index.php #abc'+data);
                        }
                 });
             });
@@ -374,7 +381,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
           </div>  
         </div>   
 	";
-        echo "</form>";;
+        echo "</form>";
         echo "<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
               <div class=\"modal-dialog\" role=\"document\">
                 <div class=\"modal-content\">
@@ -384,10 +391,15 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                   </div>
                   <div class=\"modal-body\">
                 <div id='abc$imgId'style='width: 20%;height: 100px;padding-right: 35%'>
-               
+                
                 <table align='center' style='margin-left: 30px'>
                     <tr>
-                        <td><div class=\"round\" style=\"background-image: url(img/portfolio-1.jpg);margin: 0;width: 70px;height: 70px\"></div>
+                        <td>";?>
+        <?php
+        $avatarUpdate=$test->getAvatarByUserName($user);
+        echo '<img src="data:image/jpeg;base64,'.base64_encode( $avatarUpdate) .'" class="img-circle" alt="Cinque Terre" width="60" height="60" id ="avatar" style="margin-left: 15px"/>';
+        ?>
+        <?php echo"
                         </td>
                         <td>
                             <label style=\"font-size: large;float: right;margin-top: 20px;margin-left: 10px \">$UserName</label>
@@ -396,31 +408,42 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                             $Date
                         </td>
                     </tr>
-                    <td><Label>Decription:</Label></td>
+                   
                     <td><label>$Decription</label></td>
+                   
                     <tr>
             
                     </tr>
                 </table>
                 
                 ";
-        echo" 
+        echo " 
+                 
+        
            <div class='container' style='background-color: white' id='v'>
             <div class='row'>
             <div class='col-md-3'>
-                    <label>Text you comment here!</label>
-                    <form method='post'>
-                           <input type='hidden' name='CommentImageID' value='$imgId'>
-                           <textarea placeholder='comment here'  row='5' cols='45' name='comments' id='comments' display:none data-dismiss='modal'></textarea>
-                          <button type='submit' style='margin-top: 10px'class=\"btn btn-success green\"><i class=\"fa fa-share\"></i>Comment</button>
+                    <button onclick='showEdit()' id='showDiv' class='fa fa fa-times'>Edit Description</button>
+                    <div  id = 'edit' hidden>
+                    <input type='text'  placeholder='Enter your description here!' >
+                    </div>
+                    <br>
+                   
+                    <label>Text you comment here !</label>
+                    <form method='post' id='commentform' action='index.php'>
+                            <input type='hidden' name='CommentImageID' value='$imgId'>
+                          <textarea placeholder=\"comment here\" required autocomplete='off'  row='5' cols='45' name='comments' id='comments' display:none data-dismiss='modal'></textarea>
+                          <button type='submit' style='margin-top: 10px'class=\"btn btn-success green\" id='formcomment''><i class=\"fa fa-share\"></i>Comment</button>
+                            
+                      
                     </form>
                          
             </div>
         </div></div>";
-        $commentDb=new CommentDb();
-        $listComment=$commentDb->getCommentByImageId($imgId);
-        $sizeoflComment=count($listComment);
-         echo" 
+        $commentDb = new CommentDb();
+        $listComment = $commentDb->getCommentByImageId($imgId);
+        $sizeoflComment = count($listComment);
+        echo " 
                 <div class=\"container\" >
                  <div class=\"row\"style='margin: 0'>
                 <div class='col-md-3'>
@@ -430,15 +453,21 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                  
                 ";
 
-             foreach ($listComment as $comment){
-                 $UserComment=$comment->getUsername();
-                 $Content=$comment->getContent();
-                 $DateComment=$comment->getDate();
-                 echo"  <div class='comments-list'>
+        foreach ($listComment as $comment) {
+            $UserComment = $comment->getUsername();
+            $Content = $comment->getContent();
+            $DateComment = $comment->getDate();
+            $avatarComment=$test->getAvatarByUserName($UserComment);
+            echo "  <div class='comments-list'>
                           <div class='media'>
                             <p class='pull-right'><small>$DateComment</small></p>
-                            <a class='media-left' href='#'>
-                            <img src = 'http://lorempixel.com/40/40/people/1/' >
+                            <a class='media-left' href='#'>"; ?>
+
+            <?php
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($avatarComment) .'" class="img-circle" alt="Cinque Terre" width="40" height="40" id ="avatar" style="margin-left: 15px"/>';
+            ?>
+            <?php
+            echo "
                             </a>
                             <div class='media-body' ><h4 class=\"media-heading user_name\" >$UserComment</h4 >
                            $Content    
@@ -448,7 +477,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                                </div>
                                </div>";
 
-             }
+        }
 
               echo"   
                 </div>
@@ -473,15 +502,17 @@ $userHeader=$test->getUserByUN("$usernameHeader");
 
 
 
+<script>
+    $(document).ready(function () {
+        $('#btnPopover1').popover();
+    });
 
+    }
+</script>
 
 <script src="js/jquery.js"></script>
 <script src="js/HandleSearch.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#btnPopover').popover();
-    });
-</script>
+
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
