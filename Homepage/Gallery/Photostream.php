@@ -329,7 +329,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                    });
             });
         })(jQuery);
-           
+
     </script>
     <?php
         echo "<form id='target' method='get'>";
@@ -354,22 +354,23 @@ $userHeader=$test->getUserByUN("$usernameHeader");
         if($liked==true){
             echo"
                
-                <table cellpadding='10'>
+                <table cellpadding='5'>
                     <tr>
-                        <td style=\"padding-right:50px\">   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+                        <td style=\"padding-right:20px\">   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
                 </a>
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
-                 <td ><a download='$imgId' href='../../uploads/$user/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>";?>
+               
+                 <td ><a download='$imgId' href='../../uploads/$user/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px; margin-left: 20px'></a> </td>";?>
+
                    <td>
                        <a  id ="popShow<?php echo $imgId?>" title="<h4>Edit Description</h4> <h5>Change description for this image</h5> "  data-placement="top" data-content="
-                       <form action='index.php' method = 'post'>
                         <textarea name='txtDescription' placeholder='Write something about this image...' style='border: 3px solid #765942;border-radius: 10px;
                        height: 40px;width: 250px;' required autocomplete='off'><?php echo $Decription ?></textarea>
                        <span></span>
                         <input type = 'hidden' name = 'txtImageID' value = '<?php echo $imgId?>'>
                         <button type='submit' name = 'btnDescription' class='btn btn-primary'>Change</button>
-                        </form>
+
                        "
                            data-html ="true"  data-toggle="popover" style='width: 20px;height: 20px; margin-left: 50px'>
                           <img src="img/Create%20New-24.png">
@@ -476,7 +477,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                           <textarea placeholder=\"comment here\" required autocomplete='off'  row='5' cols='45' name='comments' id='comments' display:none data-dismiss='modal'></textarea>
                           <button type='submit' style='margin-top: 10px'class=\"btn btn-success green\" id='formcomment''><i class=\"fa fa-share\"></i>Comment</button>
                             
-                      
+                       <input type='text' class='form-control tag-input' name='tags2' id='tags2' placeholder='Enter tags' value='cat|dog|catfish|fish'/>
+                  
                     </form>
                          
             </div>
@@ -536,16 +538,11 @@ $userHeader=$test->getUserByUN("$usernameHeader");
 	    echo"</div>";
     }
     ?>
-
 </div>
 <script>
     $(document).ready(function () {
         $('#btnPopover1').popover();
     });
-
-
-
-
 </script>
 
 

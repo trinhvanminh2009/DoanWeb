@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <style>
     .containerImage {
 
@@ -44,6 +45,13 @@
         -ms-transform: translate(-50%, -50%);
     }
 
+</style>
+<link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/mab-jquery-taginput.css" />
+<style type="text/css">
+    .narrow {
+        width: 300px !important;
+    }
 </style>
 <body>
 <?php
@@ -197,32 +205,105 @@ if(isset($_GET['id']) && isset($_GET['user']))
                     echo "<img src='img/Height-24.png'>"." $data[1]". " pixel <br />";
                     echo "<img src='img/Micro%20SD-24.png'>". $filesize. " kb"."<br>";
                 }
-
-
-
-
-
-
-
-
-
-
                 ?>
             </div>
 
         </div>
+
     </div>
+<form action="HandleTags.php" method="post" onsubmit=" return onSubmit()">
+    <div class="form-group" style="margin-left: 200px; margin-right: 200px">
+        <label for="tags2">Add tags</label>
+        <input type="text" class="form-control tag-input" name="tags2" id="tags2" required autocomplete="off" placeholder="Enter tags" >
+    </div>
+    <input type="hidden" id="myTags" name = "myTags" required autocomplete="off">
+    <input style="margin-left: 200px"  type="submit" name="submitTag" class="btn btn-primary" value="Apply">
+</form>
     <?php
 }
 else{
     echo "Wrong direction ! Please comeback";
 }
 
-
-
-
-
 ?>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="js/mab-jquery-taginput.js"></script>
+<script type="text/javascript">
 
+    jQuery(function ($){
+
+        // Instantiate the Bloodhound suggestion engine
+        var tags = new Bloodhound({
+            datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.tag); },
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            local: [
+                { tag: 'animal' },
+                { tag: 'beach' },
+                { tag: 'family' },
+                { tag: 'nature' },
+                { tag: 'people' },
+                {tag: 'sky'},
+                {tag:'snow'},
+                {tag:'summer'},
+                {tag:'sunset'},
+
+            ]
+        });
+
+        tags.initialize();
+
+        // Set up an on-screen console for the demo
+        var screenConsole = $('#console');
+
+        // Write callback data to the screen when tags are added or removed in demo inputs
+        var logCallbackDataToConsole = function(added, removed) {
+            screenConsole.append('Tag Data: ' + (this.val() || null) + ', Added: ' + added + ', Removed: ' + removed + '\n');
+            document.getElementById("myTags").value = this.val();
+        };
+
+        // Create typeahead-enabled tag inputs
+        $('.tag-input').tagInput({
+            allowDuplicates: false,
+            typeahead: true,
+            typeaheadOptions: {
+                highlight: true
+            },
+            typeaheadDatasetOptions: {
+                display: function(d) { return d.tag; },
+                source: tags.ttAdapter()
+            },
+            onTagDataChanged: logCallbackDataToConsole
+        });
+
+        // Create basic tag inputs with no typeahead
+        $('.tag-input-basic').tagInput({
+            onTagDataChanged: logCallbackDataToConsole
+        });
+
+        $('#results a[rel="external"]').attr('target', '_blank');
+
+    });
+
+</script>
+<script>
+   function onSubmit() {
+       var tag = document.getElementById("myTags").value;
+       if(tag != '')
+       {
+
+           return true;
+       }
+       else
+       {
+
+           return false;
+       }
+
+
+   }
+
+</script>
 </body>
 </html>

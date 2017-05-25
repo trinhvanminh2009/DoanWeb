@@ -1,5 +1,5 @@
 <?php
-include "../Data/UserDb.php";
+include_once "../Data/UserDb.php";
 session_start();
 if(isset($_SESSION['username']))
 {
@@ -66,6 +66,8 @@ $user=$test->getUserByUN("$username");
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Explore</a></li>
+                            <li role="presentation"><a href="#Section2" aria-controls="home" role="tab" data-toggle="tab">Trending</a></li>
+                            <li role="presentation"><a href="#Section3" aria-controls="home" role="tab" data-toggle="tab">Album</a></li>
                         </ul>
                         <hr>
                         <!-- Tab panes -->
@@ -78,18 +80,20 @@ $user=$test->getUserByUN("$username");
 
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section2">
-                                <h3>Section 2</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                                <?php
+                                include_once "Trending.php";
+                                ?>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section3">
-                                <h3>Section 3</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                                <h3>All Album</h3>
+                                <?php require "Allalbum.php"?>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section4">
                                 <h3>Section 4</h3>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

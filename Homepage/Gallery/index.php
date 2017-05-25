@@ -75,6 +75,7 @@ $user=$test->getUserByUN("$username");
             </tr>
         </table>
     </div>
+    <link href="css/bootstrap-tagsinput.css" rel="stylesheet">
 
 </header>
 
@@ -98,7 +99,9 @@ $user=$test->getUserByUN("$username");
                             <div role="tabpanel" class="tab-pane fade in active" id="Section1">
                                 <h3>Photostream</h3>
                                 <?php require"Photostream.php" ?>
-
+                                <?php
+                                    $user
+                                ?>
                                 <div class="row">
 
 
@@ -112,7 +115,6 @@ $user=$test->getUserByUN("$username");
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section3">
                                 <h3>Section 3</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section4">
                                 <h3>Section 4</h3>
@@ -140,11 +142,11 @@ $user=$test->getUserByUN("$username");
 <!-- /.container -->
 
 <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/jquery.js"></script>
-
-
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
 
 
 </body>
