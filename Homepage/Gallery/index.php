@@ -107,8 +107,8 @@ $user=$test->getUserByUN("$username");
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section2">
-                                <h3>Section 2</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                                <h3>Album</h3>
+                                <?php require "Album.php"?>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section3">
                                 <h3>Section 3</h3>
