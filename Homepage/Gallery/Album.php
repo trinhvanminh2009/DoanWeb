@@ -45,7 +45,7 @@
         left: 0;
         right: 0;
         overflow: hidden;
-        width: 100%;
+        width: 95%;
         height:0%;
         transition: .5s ease;
     }
@@ -121,10 +121,10 @@
                                         <td>
                                             <div class="col-md-2"><label>
                                                     <img
-                                                        src="../../uploads/<?=$user?>/<?=$url?>" style="width: 150px;height: 150px;"
+                                                        src="../../uploads/<?=$user?>/<?=$url?>" style="width: 150px;height:150px;"
                                                         class="img-check"><input type="checkbox" name="chk[]" id="item<?=$imgid?>"
                                                                                  value=<?=$imgid?> class="hidden"
-                                                                                 autocomplete="off"></label></div>
+                                                                                 autocomplete="off" ></label></div>
                                         </td>
                                         <?php
                                         $count++;
@@ -170,7 +170,7 @@
                 $albumurl=$albumDb->getFristImageFromAlbum($albumID);
                 echo"    <div class=\"col-lg-3 col-md-4 col-xs-6\" id='containerAlbum'>
                     <a href=\"AlbumDetail.php?albumId=$albumID&username=$username\" class=\"d-block mb-4 h-100\">
-                        <img class=\"img-fluid img-thumbnail\" id=\"imgalbum\" src=\"../../uploads/$username/$albumurl\" alt=\"\">
+                        <img class=\"img-fluid img-thumbnail\" id=\"imgalbum\" src=\"../../uploads/$username/$albumurl\" alt=\"\" style='width: 550px;height: 350px'>
                          <div class=\"overlay\">
                             <div class=\"text\"> <label>Album Name:</label>$albumName<br>
                               <label>Created:</label> $albumDate<br>

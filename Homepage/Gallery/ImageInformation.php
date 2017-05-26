@@ -217,6 +217,8 @@ if(isset($_GET['id']) && isset($_GET['user']))
         <input type="text" class="form-control tag-input" name="tags2" id="tags2" required autocomplete="off" placeholder="Enter tags" >
     </div>
     <input type="hidden" id="myTags" name = "myTags" required autocomplete="off">
+    <input type="hidden" name="imageID" value="<?php echo $imageID?>">
+    <input type="hidden" name="username" value="<?php echo $userName?>">
     <input style="margin-left: 200px"  type="submit" name="submitTag" class="btn btn-primary" value="Apply">
 </form>
     <?php

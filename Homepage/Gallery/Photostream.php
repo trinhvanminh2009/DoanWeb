@@ -214,14 +214,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
         $tempDescription = $_POST['txtDescription'];
         $tempImageID = $_POST['txtImageID'];
         $Image->updateDescription($tempImageID, $tempDescription);
-
-
-
     }
-
-
-
-
 ?>
 <div class="col-lg-4" style="float: right">
     <table>
