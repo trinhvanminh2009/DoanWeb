@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b6d7bf3-622c-4002-b31e-9ac29f760548" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Album.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Album.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/AllUserPicture.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/AllUserPicture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/HandleTags.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/HandleTags.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/ImageInformation.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/ImageInformation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Photostream.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Photostream.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,7 +30,7 @@
       <file leaf-file-name="HandleTags.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homepage/Gallery/HandleTags.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
+            <state relative-caret-position="-229">
               <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <marker date="1495791803038" expanded="true" signature="771:788" ph="select * fro... tag" />
@@ -44,21 +40,6 @@
                 <marker date="1495791803038" expanded="true" signature="2196:2238" ph="select `TagI... tag" />
                 <marker date="1495791803038" expanded="true" signature="2196:2239" ph="select `TagI... tag" />
                 <marker date="1495791803038" expanded="true" signature="2196:2256" ph="select `TagI... tag" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageInformation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Homepage/Gallery/ImageInformation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="220" column="39" lean-forward="true" selection-start-line="220" selection-start-column="39" selection-end-line="220" selection-end-column="39" />
-              <folding>
-                <element signature="n#cameraUsed#0;n#!!top" expanded="false" />
-                <element signature="n#script#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1495791761406" expanded="true" signature="2892:2940" ph="select Url f... image" />
               </folding>
             </state>
           </provider>
@@ -165,8 +146,8 @@
         <option value="$PROJECT_DIR$/Homepage/Gallery/AllUserPicture.php" />
         <option value="$PROJECT_DIR$/Homepage/Gallery/Photostream.php" />
         <option value="$PROJECT_DIR$/Homepage/Gallery/Album.php" />
-        <option value="$PROJECT_DIR$/Homepage/Gallery/ImageInformation.php" />
         <option value="$PROJECT_DIR$/Homepage/Gallery/HandleTags.php" />
+        <option value="$PROJECT_DIR$/Homepage/Gallery/ImageInformation.php" />
       </list>
     </option>
   </component>
@@ -432,12 +413,12 @@
       <workItem from="1495024812667" duration="679000" />
       <workItem from="1495690783754" duration="27335000" />
       <workItem from="1495722637151" duration="409000" />
-      <workItem from="1495755562868" duration="19865000" />
+      <workItem from="1495755562868" duration="23572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="404399000" />
+    <option name="totallyTimeSpent" value="408106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -1054,20 +1035,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Homepage/Gallery/ImageInformation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="220" column="39" lean-forward="true" selection-start-line="220" selection-start-column="39" selection-end-line="220" selection-end-column="39" />
+        <state relative-caret-position="1377">
+          <caret line="231" column="9" lean-forward="true" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
           <folding>
             <element signature="n#cameraUsed#0;n#!!top" expanded="false" />
             <element signature="n#script#4;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1495791761406" expanded="true" signature="2892:2940" ph="select Url f... image" />
+            <marker date="1495795207557" expanded="true" signature="2892:2940" ph="select Url f... image" />
+            <marker date="1495795207557" expanded="true" signature="3110:3225" ph="SELECT Conte... tag" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homepage/Gallery/HandleTags.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
+        <state relative-caret-position="-229">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <marker date="1495791803038" expanded="true" signature="771:788" ph="select * fro... tag" />

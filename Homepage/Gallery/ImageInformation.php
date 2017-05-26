@@ -134,6 +134,18 @@ if(isset($_GET['id']) && isset($_GET['user']))
             $imageName= $row['Url'];
         }
     }
+    $sqlSelectTag = "SELECT Content FROM tag INNER JOIN tagimage 
+      ON tag.TagID = tagimage.TagID WHERE tagimage.ImageID ='$imageID'";
+    $resultTags = $con->query($sqlSelectTag);
+    $listTags = array();
+    if($resultTags->num_rows>0)
+    {
+        while ($rowTags = $resultTags->fetch_assoc())
+        {
+            $listTags[] = $rowTags['Content']."|";
+        }
+    }
+
 
 
     $dir = "../../uploads/$userName/$imageName";
@@ -214,7 +226,13 @@ if(isset($_GET['id']) && isset($_GET['user']))
 <form action="HandleTags.php" method="post" onsubmit=" return onSubmit()">
     <div class="form-group" style="margin-left: 200px; margin-right: 200px">
         <label for="tags2">Add tags</label>
-        <input type="text" class="form-control tag-input" name="tags2" id="tags2" required autocomplete="off" placeholder="Enter tags" >
+        <input type="text" class="form-control tag-input" name="tags2"
+               id="tags2" required autocomplete="off" placeholder="Enter tags" value="<?php
+        for($j =0; $j<count($listTags); $j++)
+        {
+            echo $listTags[$j];
+        }
+        ?>" >
     </div>
     <input type="hidden" id="myTags" name = "myTags" required autocomplete="off">
     <input type="hidden" name="imageID" value="<?php echo $imageID?>">
