@@ -52,6 +52,8 @@ if(isset($_POST['upload']))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
+    <title>My Photos</title>
 </head>
 <body>
 <form  action="HandleUpdate.php" method="post" enctype="multipart/form-data">

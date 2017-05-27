@@ -13,7 +13,6 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
     <title>My Photos</title>
-
 </head>
 
 <style>
@@ -60,11 +59,11 @@
 
 function cameraUsed($imagePath) {
 
-if ((isset($imagePath)) and (file_exists($imagePath))) {
+    if ((isset($imagePath)) and (file_exists($imagePath))) {
 
 // There are 2 arrays which contains the information we are after, so it's easier to state them both
-$exif_ifd0 = read_exif_data($imagePath ,'IFD0' ,0) ;
-$exif_exif =  read_exif_data($imagePath ,'EXIF' ,0);
+        $exif_ifd0 = read_exif_data($imagePath ,'IFD0' ,0) ;
+        $exif_exif =  read_exif_data($imagePath ,'EXIF' ,0);
 
 //error control
 
@@ -110,10 +109,10 @@ $exif_exif =  read_exif_data($imagePath ,'EXIF' ,0);
         $return['date'] = $camDate;
         $return['iso'] = $camIso;
         return $return;
-}
-else {
-    return false;
-}
+    }
+    else {
+        return false;
+    }
 }
 
 ?>
@@ -124,11 +123,11 @@ include_once 'header.php';
 
 if(isset($_GET['id']) && isset($_GET['user']))
 {
-   $imageID = $_GET['id'];
-   $userName = $_GET['user'];
-   $connect = new Connection();
-   $con = $connect->connect();
-   $result = $con->query("select Url from image where ImageID = '$imageID'");
+    $imageID = $_GET['id'];
+    $userName = $_GET['user'];
+    $connect = new Connection();
+    $con = $connect->connect();
+    $result = $con->query("select Url from image where ImageID = '$imageID'");
     if($result->num_rows > 0)
     {
         while ($row = $result->fetch_assoc())
@@ -182,7 +181,7 @@ if(isset($_GET['id']) && isset($_GET['user']))
                             left: 0;
                         }
                     </style>
-                <?php
+                    <?php
                     $camera = cameraUsed($dir);
                     echo "<img src='img/Android-100.png'>" . $camera['make'] . " " . $camera['model'] . "<br />";
                     echo "<img src='img/Picture-24.png'>" .$imageName ." ". "<br>";
@@ -225,22 +224,19 @@ if(isset($_GET['id']) && isset($_GET['user']))
         </div>
 
     </div>
-<form action="HandleTags.php" method="post" onsubmit=" return onSubmit()">
-    <div class="form-group" style="margin-left: 200px; margin-right: 200px">
-        <label for="tags2">Add tags</label>
-        <input type="text" class="form-control tag-input" name="tags2"
-               id="tags2" required autocomplete="off" placeholder="Enter tags" value="<?php
-        for($j =0; $j<count($listTags); $j++)
-        {
-            echo $listTags[$j];
-        }
-        ?>" >
-    </div>
-    <input type="hidden" id="myTags" name = "myTags" required autocomplete="off">
-    <input type="hidden" name="imageID" value="<?php echo $imageID?>">
-    <input type="hidden" name="username" value="<?php echo $userName?>">
-    <input style="margin-left: 200px"  type="submit" name="submitTag" class="btn btn-primary" value="Apply">
-</form>
+    <form action="HandleTags.php" method="post" onsubmit=" return onSubmit()">
+        <div class="form-group" style="margin-left: 200px; margin-right: 200px">
+            <label for="tags2">Tags of image</label>
+            <input type="text" class="form-control tag-input" name="tags2"
+                   id="tags2" required autocomplete="off" readonly  placeholder="Enter tags" value="<?php
+            for($j =0; $j<count($listTags); $j++)
+            {
+                echo $listTags[$j];
+            }
+            ?>" >
+        </div>
+
+    </form>
     <?php
 }
 else{
@@ -310,21 +306,21 @@ else{
 
 </script>
 <script>
-   function onSubmit() {
-       var tag = document.getElementById("myTags").value;
-       if(tag != '')
-       {
+    function onSubmit() {
+        var tag = document.getElementById("myTags").value;
+        if(tag != '')
+        {
 
-           return true;
-       }
-       else
-       {
+            return true;
+        }
+        else
+        {
 
-           return false;
-       }
+            return false;
+        }
 
 
-   }
+    }
 
 </script>
 </body>

@@ -19,7 +19,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Thumbnail Gallery - Start Bootstrap Template</title>
+    <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
+    <title>My Photos</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -512,9 +513,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                                </div>
                                </div>
                                </div>";
-
         }
-
               echo"   
                
                 </div>

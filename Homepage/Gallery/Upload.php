@@ -11,7 +11,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
+    <title>My Photos</title>
     <link href="css/dropzone.css" type="text/css" rel="stylesheet">
     <script src="js/dropzone.js"></script>
     <script>

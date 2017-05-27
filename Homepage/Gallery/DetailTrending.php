@@ -1,13 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: azaudio
- * Date: 5/22/2017
- * Time: 9:49 AM
+ * User: Minh
+ * Date: 5/27/2017
+ * Time: 8:23 AM
  */
 
+
 ?>
-<!DOCTYPE html >
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -17,14 +18,14 @@
 include "../Data/ImageDb.php";
 include_once "../Data/CommentDb.php";
 include_once "../Data/likeDb.php";
-include_once "../Data/AlbumDb.php";
-$Album=new AlbumDb();
+include_once "../Data/TrendingDB.php";
+$Trending = new TrendingDB();
 $username=$_GET['username'];
-if(isset($_GET['albumId'])){
-    $albumId=$_GET['albumId'];
-    $albumName=$Album->getAlbumName($albumId);
+if(isset($_GET['tag'])){
+    $tagImage=$_GET['tag'];
+    $listImage=$Trending->getAllImageByTag($tagImage);
 }
-$list=$Album->getAllImageInAblum($albumId);
+$list= $listImage;
 $likeDb=new LikeDb();
 if(isset($_POST['comments'])){
     $UserName=$username;
@@ -34,6 +35,7 @@ if(isset($_POST['comments'])){
     $insertcomment->insertComment($UserName,$commentImage,$content);
 
 }
+
 
 ?>
 <?php
@@ -135,12 +137,13 @@ include_once "header.php"
 </header>
 <div class="row" style="text-align: center;padding-left: 100px;">
     <div class="col-lg-12">
-       <center> <h1 class="page-header"> <?= $albumName?></h1></center>
+        <center> <h1 class="page-header"> <?= $tagImage?></h1></center>
     </div>
 
     <?php
     $stt=0;
     foreach ($list as $img){
+
         $url=$img->getUrl();
         $imgId=$img->getImageID();
         $UserName=$img->getUsername();
@@ -149,7 +152,6 @@ include_once "header.php"
         $stt+=1;
         if(isset($_GET['ImageID'])) {
             $a=$_GET['ImageID'];
-
         }
         else{ $a=0;}
         echo "    <script>
@@ -362,7 +364,7 @@ include_once "header.php"
 </div>
 <div class="row" style="text-align: right;padding-right: 200px">
     <button class="btn btn-primary btn-lg" >
-        <a href="index.php" style="color: white;">Back to Home</a>
+        <a href="Explore.php" style="color: white;">Back to Home</a>
     </button>
 </div>
 
@@ -373,11 +375,6 @@ include_once "header.php"
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#btnPopover').popover();
-    });
-</script>
 
 </body>
 

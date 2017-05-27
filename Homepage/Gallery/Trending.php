@@ -18,7 +18,8 @@ if ($conn->connect_error) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
+    <title>My Photos</title>
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -37,6 +38,8 @@ if ($conn->connect_error) {
             top: 100px;
         }
     </style>
+
+
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -87,7 +90,7 @@ if ($conn->connect_error) {
                     <img src="img/notifycation_icon.png" style="margin-top: 15px ; margin-left: 10px">
                 </li>
                 <li>
-                    <a  id ="btnPopover" title="<h4>Labdien, Ways of love</h4> <h5>Now you know how to greet people in Latvian</h5> "  data-placement="bottom" data-content="
+                    <a  id ="btnPopoverTrending" title="<h4>Labdien, Ways of love</h4> <h5>Now you know how to greet people in Latvian</h5> "  data-placement="bottom" data-content="
                     <div id='myProgress' style='width: 250px;background-color: #ddd'>
                                     <div id='myBar' style='width: 20%;height: 5px;background-color: #4CAF50'></div>
                                 </div>
@@ -119,8 +122,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         ?>
 <div class="col-lg-3 col-md-4 col-xs-6">
-    <a href="#" class="d-block mb-4 h-100">
-        <img class="img-fluid img-thumbnail" src="../../uploads/trending/<?php echo $row['Url']?>" alt="Not Found" style="width: 400px;height: 200px;">
+
         <?php $tagID = $row['TagID'];
             $sql1 = "select Content from tag WHERE `TagID` = '$tagID'";
             $result1 = $conn->query($sql1);
@@ -129,6 +131,8 @@ if ($result->num_rows > 0) {
                 $row1 = $result1->fetch_assoc();
                 $tagName = $row1['Content'];
                 ?>
+    <a href="DetailTrending.php?tag=<?php echo $tagName?>" class="d-block mb-4 h-100">
+        <img class="img-fluid img-thumbnail" src="../../uploads/trending/<?php echo $row['Url']?>" alt="Not Found" style="width: 400px;height: 200px;">
                 <p class="textContent"><?php echo $tagName?></p>
                 <?php
             }
@@ -146,6 +150,15 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-
 </body>
+<script>
+    $(document).ready(function () {
+        $('#btnPopoverTrending').popover();
+    });
+
+
+
+</script>
+
+
 </html>

@@ -19,7 +19,8 @@ $userHeader=$test->getUserByUN("$usernameHeader");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Thumbnail Gallery - Start Bootstrap Template</title>
+    <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
+    <title>My Photos</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -358,7 +359,7 @@ if(isset($_POST['comments'])){
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
                  <td ><a download='$imgId' href='../../uploads/$user1/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
-                  <td ><a  href='ImageInformation.php?id=$imgId&user=$user1'><img  src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
+                  <td ><a  href='ImageInformationExplorer.php?id=$imgId&user=$user1'><img  src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
                     
 </td>
                     </tr>
@@ -375,7 +376,7 @@ if(isset($_POST['comments'])){
                 </a></td>
                 <td ><a download='$imgId' href='../../uploads/$user1/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>
                 <td>
-                  <td ><a  href='ImageInformation.php?id=$imgId&user=$user1'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
+                  <td ><a  href='ImageInformationExplorer.php?id=$imgId&user=$user1'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>
                 </td>
                     </tr>
                 </table>";
