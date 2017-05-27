@@ -7,7 +7,7 @@
  */
 
 ?>
-<!DOCTYPE html >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html lang="en">
 
@@ -47,8 +47,7 @@ include_once "header.php"
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
-    <title>My Photos</title>
+    <title>Thumbnail Gallery - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -149,7 +148,6 @@ include_once "header.php"
         $stt+=1;
         if(isset($_GET['ImageID'])) {
             $a=$_GET['ImageID'];
-
         }
         else{ $a=0;}
         echo "    <script>
@@ -215,7 +213,11 @@ include_once "header.php"
                      
                         $('.fbphotobox img').fbPhotoBox('addTags',
                             [{x:0.3,y:0.3,w:0.3,h:0.3}]);
-                      	
+                       
+                        
+                        
+                 
+                       	
                     }
                    });
             });
@@ -225,6 +227,7 @@ include_once "header.php"
 
         echo"<form id='target' method='get'>";
         echo "<input type='hidden'id='ImageID$imgId' name='ImageID' value='$imgId'>";
+        echo "<input type='hidden'id='username' name='ImageID' value='$UserName'>";
         echo "</form>";
         echo"<div class=\"col-lg-3 col-md-4 col-xs-6 thumb\">";
         echo"<div class='view effect'> 
@@ -367,17 +370,20 @@ include_once "header.php"
 </div>
 
 
+
+
+
+
+
+
+
+
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#btnPopover').popover();
-    });
-</script>
 
 </body>
 
