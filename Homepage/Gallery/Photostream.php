@@ -209,13 +209,6 @@ $userHeader=$test->getUserByUN("$usernameHeader");
 
     }
 
-    if(isset($_POST['btnDescription']))
-    {
-
-        $tempDescription = $_POST['txtDescription'];
-        $tempImageID = $_POST['txtImageID'];
-        $Image->updateDescription($tempImageID, $tempDescription);
-    }
 ?>
 <div class="col-lg-4" style="float: right">
     <table>
@@ -359,14 +352,14 @@ $userHeader=$test->getUserByUN("$usernameHeader");
 
                    <td>
                        <a  id ="popShow<?php echo $imgId?>" title="<h4>Edit Description</h4> <h5>Change description for this image</h5> "  data-placement="top" data-content="
+                        <form action='HandleDescription.php' method = 'post'>
                         <textarea name='txtDescription' placeholder='Write something about this image...' style='border: 3px solid #765942;border-radius: 10px;
                        height: 40px;width: 250px;' required autocomplete='off'><?php echo $Decription ?></textarea>
                        <span></span>
                         <input type = 'hidden' name = 'txtImageID' value = '<?php echo $imgId?>'>
                         <button type='submit' name = 'btnDescription' class='btn btn-primary'>Change</button>
-
-                       "
-                           data-html ="true"  data-toggle="popover" style='width: 20px;height: 20px; margin-left: 50px'>
+                    </form>"
+                          data-html ="true"  data-toggle="popover" style='width: 20px;height: 20px; margin-left: 50px'>
                           <img src="img/Create%20New-24.png">
                        </a>
                     </td>
@@ -390,7 +383,7 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                  <td ><a download='$imgId' href='../../uploads/$user/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>";?>
                    <td>
                        <a id ="popShow<?php echo $imgId?>" title="<h4>Edit Description</h4> <h5>Change description for this image</h5>"  data-placement="top" data-content="
-                       <form action='index.php' method = 'post'>
+                       <form action='HandleDescription.php' method = 'post'>
                         <textarea name='txtDescription' placeholder='Write something about this image...' style='border: 3px solid #765942;border-radius: 10px;
                        height: 40px;width: 250px;' required autocomplete='off'><?php echo $Decription ?></textarea>
                        <span></span>
@@ -471,7 +464,6 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                           <textarea placeholder=\"comment here\" required autocomplete='off'  row='5' cols='45' name='comments' id='comments' display:none data-dismiss='modal'></textarea>
                           <button type='submit' style='margin-top: 10px'class=\"btn btn-success green\" id='formcomment''><i class=\"fa fa-share\"></i>Comment</button>
                             
-                       <input type='text' class='form-control tag-input' name='tags2' id='tags2' placeholder='Enter tags' value='cat|dog|catfish|fish'/>
                   
                     </form>
                          

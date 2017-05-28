@@ -74,10 +74,17 @@
                 <div class="col-sm-6 col-sm-offset-3 social-login">
                     <h3 style="color: green">...or login with:</h3>
                     <div class="social-login-buttons">
-                        <a class="btn btn-link-1 btn-link-1-facebook" href="https://www.facebook.com/dialog/oauth?client_id=415135538841889&redirect_uri=http://localhost:8080/DoanWeb/Homepage/callback.php&scope=public_profile">
+                        <button class="btn btn-link-1 btn-link-1-facebook" onclick="login()" >
                             <i class="fa fa-facebook"></i> Facebook
-                        </a>
-
+                        </button>
+                        <form action="HandleFacebookLogin.php" method="post" hidden>
+                            <input type="text" id = "txtUserName"  name="txtUsername">
+                            <input type="text" id ="first_name" name = "first_name" >
+                            <input type="text" id ="last_name" name = "last_name" >
+                            <input type="text" id ="gender" name = "gender" >
+                            <input type="url" id="url" name ="url" >
+                            <input type="submit" id="btnSubmit">
+                        </form>
                         <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
                             <i class="fa fa-google-plus"></i> Google Plus
                         </a>
@@ -98,6 +105,7 @@
 <script src="form-1/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="form-1/assets/js/jquery.backstretch.min.js"></script>
 <script src="form-1/assets/js/scripts.js"></script>
+<script src="js/FacebookLogin.js"></script>
 
 <!--[if lt IE 10]>
 <script src="form-1/assets/js/placeholder.js"></script>

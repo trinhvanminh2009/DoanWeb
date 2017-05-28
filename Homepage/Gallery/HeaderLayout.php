@@ -25,7 +25,7 @@
                     <a href="index.php">Me</a>
                 </li>
                 <li>
-                    <a href="Explore.php">Explore</a>
+                    <a href="Explore.php">Explorer</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>

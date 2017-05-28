@@ -38,14 +38,10 @@ if(isset($_POST['submit']))
            echo "Successfully";
            header("Location:index.php");
        }
-
-
-
     }
     else
     {
         echo "Error".$conn->error;
-
     }
    
     $conn->close();

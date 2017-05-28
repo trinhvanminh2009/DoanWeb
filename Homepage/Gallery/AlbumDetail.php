@@ -149,9 +149,14 @@ include_once "header.php"
         if(isset($_GET['ImageID'])) {
             $a=$_GET['ImageID'];
         }
-        else{ $a=0;}
+        else{ $a=0;}?>
+
+
+
+    <?php
+
         echo "    <script>
-        
+       
         jQuery(function ($) {
        
          
@@ -246,16 +251,43 @@ include_once "header.php"
             }
         }
         if($liked==true){
-            echo"   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+            echo"
+               
+                <table cellpadding='5'>
+                    <tr>
+                        <td style=\"margin-left: 50px\">   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
                 </a>
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
-                </a>";
+                </a></td>
+               
+                 <td ><a download='$imgId' href='../../uploads/$UserName/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>";?>
+
+            <?php
+            echo "<td ><a  href='ImageInformation.php?id=$imgId&user=$UserName'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 60px'></a> </td>";
+            ?>
+
+            </tr>
+            </table>
+            <?php
+
         }
         else{
-            echo"   <a id='like$imgId'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+            echo"
+                <table >
+                    <tr>
+                        <td style=\"padding-right:20px\">   <a id='like$imgId'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
                 </a>
-                <a id='unlike$imgId'style='display: none' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
-                </a>";
+                <a id='unlike$imgId' style='display: none'>  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
+                </a></td>
+                 <td ><a download='$imgId' href='../../uploads/$UserName/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>";?>
+
+            <?php
+            echo "<td ><a  href='ImageInformation.php?id=$imgId&user=$UserName'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 60px'></a> </td>";
+            ?>
+
+            </tr>
+            </table>
+            <?php
         }
         echo" 
             

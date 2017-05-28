@@ -13,6 +13,8 @@ Class Connection{
     private  $conn;
     function  connect(){
         $this->conn=mysqli_connect('localhost','root','','images_management');
+        mysqli_set_charset($this->conn, 'UTF8');
+
         if (!$this->conn) {
             die('Could not connect: ' . mysqli_error());
         }

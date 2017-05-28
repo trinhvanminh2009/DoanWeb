@@ -14,7 +14,7 @@ $user=$test->getUserByUN("$username");
 
 <head>
 
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -37,10 +37,6 @@ $user=$test->getUserByUN("$username");
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/css.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <script src="js/ca-pub-3311815518700050.js"></script>
@@ -63,7 +59,7 @@ $user=$test->getUserByUN("$username");
             <tr>
                 <td >
                     <?php
-                    echo '<img src="data:image/jpeg;base64,'.base64_encode($user->getAvatar()) .'" class="img-circle" alt="Cinque Terre" width="90" height="90" style="margin-top: 100px; margin-left: 100px"/>';
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode($user->getAvatar()) .'" class="img-circle" alt="Not Found" width="90" height="90" style="margin-top: 100px; margin-left: 100px"/>';
                     ?>
                 </td>
                 <td>
@@ -104,10 +100,6 @@ $user=$test->getUserByUN("$username");
                                     $user
                                 ?>
                                 <div class="row">
-
-
-
-
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="Section2">
