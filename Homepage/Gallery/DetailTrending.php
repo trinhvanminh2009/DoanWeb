@@ -1,14 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Minh
- * Date: 5/27/2017
- * Time: 8:23 AM
+ * User: azaudio
+ * Date: 5/22/2017
+ * Time: 9:49 AM
  */
 
-
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html lang="en">
 
@@ -19,13 +18,13 @@ include "../Data/ImageDb.php";
 include_once "../Data/CommentDb.php";
 include_once "../Data/likeDb.php";
 include_once "../Data/TrendingDB.php";
+
 $Trending = new TrendingDB();
-$username=$_GET['username'];
 if(isset($_GET['tag'])){
     $tagImage=$_GET['tag'];
     $listImage=$Trending->getAllImageByTag($tagImage);
 }
-$list= $listImage;
+$list=$listImage;
 $likeDb=new LikeDb();
 if(isset($_POST['comments'])){
     $UserName=$username;
@@ -35,7 +34,6 @@ if(isset($_POST['comments'])){
     $insertcomment->insertComment($UserName,$commentImage,$content);
 
 }
-
 
 ?>
 <?php
@@ -49,8 +47,7 @@ include_once "header.php"
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" type="image/png" href="img/Google%20Images-48.png">
-    <title>My Photos</title>
+    <title>Thumbnail Gallery - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -143,7 +140,6 @@ include_once "header.php"
     <?php
     $stt=0;
     foreach ($list as $img){
-
         $url=$img->getUrl();
         $imgId=$img->getImageID();
         $UserName=$img->getUsername();
@@ -153,9 +149,14 @@ include_once "header.php"
         if(isset($_GET['ImageID'])) {
             $a=$_GET['ImageID'];
         }
-        else{ $a=0;}
+        else{ $a=0;}?>
+
+
+
+        <?php
+
         echo "    <script>
-        
+       
         jQuery(function ($) {
        
          
@@ -217,7 +218,11 @@ include_once "header.php"
                      
                         $('.fbphotobox img').fbPhotoBox('addTags',
                             [{x:0.3,y:0.3,w:0.3,h:0.3}]);
-                      	
+                       
+                        
+                        
+                 
+                       	
                     }
                    });
             });
@@ -227,6 +232,7 @@ include_once "header.php"
 
         echo"<form id='target' method='get'>";
         echo "<input type='hidden'id='ImageID$imgId' name='ImageID' value='$imgId'>";
+        echo "<input type='hidden'id='username' name='ImageID' value='$UserName'>";
         echo "</form>";
         echo"<div class=\"col-lg-3 col-md-4 col-xs-6 thumb\">";
         echo"<div class='view effect'> 
@@ -245,16 +251,42 @@ include_once "header.php"
             }
         }
         if($liked==true){
-            echo"   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+            echo"
+               
+                <table cellpadding='5'>
+                    <tr>
+                        <td style=\"padding-right: 0px\">   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
                 </a>
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
-                </a>";
+                </a></td>
+               
+                 <td ><a download='$imgId' href='../../uploads/$UserName/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>";?>
+
+            <?php
+            echo "<td ><a  href='ImageInformation.php?id=$imgId&user=$UserName'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 60px'></a> </td>";
+            ?>
+
+            </tr>
+            </table>
+            <?php
         }
         else{
-            echo"   <a id='like$imgId'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+            echo"
+                <table >
+                    <tr>
+                        <td style=\"padding-right:50px\">   <a id='like$imgId'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
                 </a>
-                <a id='unlike$imgId'style='display: none' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
-                </a>";
+                <a id='unlike$imgId' style='display: none'>  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
+                </a></td>
+                 <td ><a download='$imgId' href='../../uploads/$UserName/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px'></a> </td>";?>
+
+            <?php
+            echo "<td ><a  href='ImageInformation.php?id=$imgId&user=$UserName'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 60px'></a> </td>";
+            ?>
+
+            </tr>
+            </table>
+            <?php
         }
         echo" 
             
@@ -364,9 +396,17 @@ include_once "header.php"
 </div>
 <div class="row" style="text-align: right;padding-right: 200px">
     <button class="btn btn-primary btn-lg" >
-        <a href="Explore.php" style="color: white;">Back to Home</a>
+        <a href="index.php" style="color: white;">Back to Home</a>
     </button>
 </div>
+
+
+
+
+
+
+
+
 
 
 <!-- jQuery -->
