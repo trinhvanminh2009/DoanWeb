@@ -10,7 +10,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="icon" type="image/png" href="Gallery/img/Google%20Images-48.png">
+    <title>My Photos</title>
     <script src="js/HandleSingUp.js"></script>
     <link href="css/signUp.css" rel="stylesheet" type="text/css">
     <!-- Custom Fonts -->

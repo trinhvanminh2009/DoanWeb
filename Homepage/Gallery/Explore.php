@@ -6,6 +6,10 @@ if(isset($_SESSION['username']))
     $username = $_SESSION['username'];
 
 }
+else
+{
+    header("Location:../index.php");
+}
 $test=new UserDb();
 $user=$test->getUserByUN("$username");
 /**
@@ -104,12 +108,37 @@ $user=$test->getUserByUN("$username");
     <hr>
 
     <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
+    <footer >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Contact Us</strong>
+                    </h4>
+                    <p>19, Nguyen Huu Tho, District 7
+                        <br>Ho Chi Minh City , VietNam</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> 0164 7976 713</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:trinhvanminh2009@gmail.com">trinhvanminh2009@gmail.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/minh.trinh.52493"><i class="fa fa-facebook-square fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/trinhvanminh2009"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.flickr.com/photos/147362186@N03/"><i class="fa fa-flickr fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+
+                </div>
             </div>
         </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
 
 </div>

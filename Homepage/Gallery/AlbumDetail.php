@@ -255,7 +255,7 @@ include_once "header.php"
                
                 <table cellpadding='5'>
                     <tr>
-                        <td style=\"margin-left: 50px\">   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+                        <td style=\"padding-right: 0px\">   <a id='like$imgId'style='display: none'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
                 </a>
                 <a id='unlike$imgId' >  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>
@@ -275,7 +275,7 @@ include_once "header.php"
             echo"
                 <table >
                     <tr>
-                        <td style=\"padding-right:20px\">   <a id='like$imgId'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
+                        <td style=\"padding-right:50px\">   <a id='like$imgId'> <img id='likeimg$imgId'src='../../Homepage/Gallery/img/Like Filled-24 (1).png' >
                 </a>
                 <a id='unlike$imgId' style='display: none'>  <img id='unlikeimg$imgId' src='../../Homepage/Gallery/img/Like Filled-24.png''>
                 </a></td>

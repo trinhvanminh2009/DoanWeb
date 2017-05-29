@@ -6,6 +6,7 @@
  * Time: 5:24 PM
  */
 include_once 'header.php';
+
 if(!empty($_FILES))
 {
         $username = $user->getUsername();

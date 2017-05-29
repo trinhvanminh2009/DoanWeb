@@ -17,7 +17,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/png" href="Gallery/img/Google%20Images-48.png">
+    <title>My Photos</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,13 +53,7 @@
             <a href="#top" onclick=$("#menu-close").click();>Home</a>
         </li>
         <li>
-            <a href="#about" onclick=$("#menu-close").click();>About</a>
-        </li>
-        <li>
             <a href="#services" onclick=$("#menu-close").click();>Login</a>
-        </li>
-        <li>
-            <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
         </li>
         <li>
             <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
@@ -111,6 +106,7 @@
 
 <!-- Footer -->
 <footer>
+    <div id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -141,6 +137,7 @@
         </div>
     </div>
     <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </div>
 </footer>
 
 <!-- jQuery -->

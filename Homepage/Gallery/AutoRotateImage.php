@@ -1,39 +1,67 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Minh
- * Date: 5/14/2017
- * Time: 5:37 PM
- */
+function _mirrorImage ( $imgsrc)
+{
+    $width = imagesx ( $imgsrc );
+    $height = imagesy ( $imgsrc );
 
-function autoRotateImage($image) {
-    $orientation = $image->getImageOrientation();
+    $src_x = $width -1;
+    $src_y = 0;
+    $src_width = -$width;
+    $src_height = $height;
 
-    switch($orientation) {
-        case imagick::ORIENTATION_BOTTOMRIGHT:
-            $image->rotateimage("#000", 180); // rotate 180 degrees
-            break;
+    $imgdest = imagecreatetruecolor ( $width, $height );
 
-        case imagick::ORIENTATION_RIGHTTOP:
-            $image->rotateimage("#000", 90); // rotate 90 degrees CW
-            break;
-
-        case imagick::ORIENTATION_LEFTBOTTOM:
-            $image->rotateimage("#000", -90); // rotate 90 degrees CCW
-            break;
+    if ( imagecopyresampled ( $imgdest, $imgsrc, 0, 0, $src_x, $src_y, $width, $height, $src_width, $src_height ) )
+    {
+        return $imgdest;
     }
 
-    // Now that it's auto-rotated, make sure the EXIF data is correct in case the EXIF gets saved with the image!
-    $image->setImageOrientation(imagick::ORIENTATION_TOPLEFT);
+    return $imgsrc;
 }
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+function adjustPicOrientation($full_filename){
+    $exif = exif_read_data($full_filename);
+    if($exif && isset($exif['Orientation'])) {
+        $orientation = $exif['Orientation'];
+        if($orientation != 1){
+            $img = imagecreatefromjpeg($full_filename);
+
+            $mirror = false;
+            $deg    = 0;
+
+            switch ($orientation) {
+                case 2:
+                    $mirror = true;
+                    break;
+                case 3:
+                    $deg = 180;
+                    break;
+                case 4:
+                    $deg = 180;
+                    $mirror = true;
+                    break;
+                case 5:
+                    $deg = 270;
+                    $mirror = true;
+                    break;
+                case 6:
+                    $deg = 270;
+                    break;
+                case 7:
+                    $deg = 90;
+                    $mirror = true;
+                    break;
+                case 8:
+                    $deg = 90;
+                    break;
+            }
+            if ($deg) $img = imagerotate($img, $deg, 0);
+            if ($mirror) $img = _mirrorImage($img);
+            $full_filename = str_replace('.jpg', "-O$orientation.jpg",  $full_filename);
+            imagejpeg($img, $full_filename, 95);
+        }
+    }
+    return $full_filename;
+}
+echo adjustPicOrientation('../../uploads/vanminh2009/20170406_103008.jpg');
+echo "<img src='../../uploads/vanminh2009/20170406_103008-O8.jpg'>";

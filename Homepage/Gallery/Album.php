@@ -10,6 +10,10 @@ if(isset($_SESSION['username']))
     $username = $_SESSION['username'];
 
 }
+else
+{
+    header("Location:../index.php");
+}
 $test1=new UserDb();
 $userAlbum=$test1->getUserByUN("$username");
 ?>
@@ -138,7 +142,7 @@ $userAlbum=$test1->getUserByUN("$username");
                                   <h6 style='text-align: center'>Using 20% of 1GB</h6>
                                             <a href='#'>Help</a>
                                             <a href ='EditProfile.php' style='text-align: center; margin-left:30%'>Settings</a>
-                                             <a href ='../index.php' style='text-align: center; margin-left:10%'>Sign out</a>"
+                                             <a href ='HandleSession.php' style='text-align: center; margin-left:10%'>Sign out</a>"
 
                         data-html ="true"  data-toggle="popover" >
                         <?php

@@ -50,10 +50,5 @@ if(isset($_POST['update']))
                 echo "Error".$conn->error;
             }
         }
-
-
-
-
-
     $conn->close();
 }

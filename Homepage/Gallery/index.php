@@ -6,6 +6,10 @@ if(isset($_SESSION['username']))
     $username = $_SESSION['username'];
 
 }
+else
+{
+    header("Location:../index.php");
+}
 $test=new UserDb();
 $user=$test->getUserByUN("$username");
 ?>
@@ -87,8 +91,7 @@ $user=$test->getUserByUN("$username");
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Photostream</a></li>
                             <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Album</a></li>
-                            <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Favorites</a></li>
-                            <li role="presentation" style="float: right"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">More</a></li>
+
                         </ul>
                         <hr>
                         <!-- Tab panes -->
@@ -106,12 +109,7 @@ $user=$test->getUserByUN("$username");
                                 <h3>Album</h3>
                                 <?php require "Album.php"?>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="Section3">
-                                <h3>Section 3</h3>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="Section4">
-                                <h3>Section 4</h3>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -123,12 +121,37 @@ $user=$test->getUserByUN("$username");
     <hr>
 
     <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
+    <footer >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Contact Us</strong>
+                    </h4>
+                    <p>19, Nguyen Huu Tho, District 7
+                        <br>Ho Chi Minh City , VietNam</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> 0164 7976 713</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:trinhvanminh2009@gmail.com">trinhvanminh2009@gmail.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/minh.trinh.52493"><i class="fa fa-facebook-square fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/trinhvanminh2009"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.flickr.com/photos/147362186@N03/"><i class="fa fa-flickr fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
 
+                </div>
             </div>
         </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
 
 </div>
