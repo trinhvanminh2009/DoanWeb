@@ -2,27 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b6d7bf3-622c-4002-b31e-9ac29f760548" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Homepage/Data/WideImage_Operation_ExifOrient.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Homepage/Gallery/HandleSession.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Homepage/Gallery/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Homepage/Gallery/asdasdas.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/lucvinhquyen/Captur12321e.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/lucvinhquyen/Capture.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/18718191_1942709989297374_2007240832_n.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/20170226_113518.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/20170226_113528.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/20170226_133109.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/20170406_103008.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/20170407_072431.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/20170407_072729.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/20170407_074854.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/trinhvanminh2009@gmail.com/img11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20161220_204415 - Copy - Copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20161220_204545 - Copy - Copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20161220_204545 - Copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20161220_204622 - Copy - Copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20161220_204632 - Copy - Copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20161226_100056.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20170226_113528.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20170406_103008.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20170407_074854.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/20170515_061753.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/Capture.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/Class.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/IMAG0374.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/Screenshot (38).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/Screenshot (39).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2009/Screenshot (46).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2016/Capture.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vanminh2017/Capture.PNG" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Album.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Album.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/AlbumDetail.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/AlbumDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/AllUserPicture.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/AllUserPicture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Allalbum.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Allalbum.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/AutoRotateImage.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/AutoRotateImage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Explore.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Explore.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/HandleUpdate.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/HandleUpdate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Photostream.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Photostream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Trending.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Trending.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/Upload.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/Upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/header.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/index.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Gallery/paser.php" afterPath="$PROJECT_DIR$/Homepage/Gallery/paser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/Login.php" afterPath="$PROJECT_DIR$/Homepage/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/SignUp.php" afterPath="$PROJECT_DIR$/Homepage/SignUp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage/index.php" afterPath="$PROJECT_DIR$/Homepage/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,8 +58,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homepage/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+            <state relative-caret-position="249">
+              <caret line="184" column="42" lean-forward="true" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -206,42 +215,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="DoanWeb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DoanWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DoanWeb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vanminh2017" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DoanWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DoanWeb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vanminh2016" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,22 +455,21 @@
       <workItem from="1496017331791" duration="12007000" />
       <workItem from="1496041360089" duration="7207000" />
       <workItem from="1496048833433" duration="3191000" />
-      <workItem from="1496057072088" duration="5942000" />
+      <workItem from="1496057072088" duration="6721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="501777000" />
+    <option name="totallyTimeSpent" value="502556000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1263,8 +1235,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Homepage/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="112" column="33" lean-forward="true" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+        <state relative-caret-position="249">
+          <caret line="184" column="42" lean-forward="true" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
           <folding />
         </state>
       </provider>
