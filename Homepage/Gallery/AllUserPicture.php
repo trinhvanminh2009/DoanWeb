@@ -95,11 +95,20 @@ include "../Data/ImageDb.php";
 include_once "../Data/CommentDb.php";
 include_once "../Data/UserDb.php";
 include_once "../Data/likeDb.php";
+
 $UserDB=new UserDb();
-$listuser=$UserDB->getAllUserName();
+if(isset($_POST['searchImage']))
+{
+    $userImage = $_POST['searchImage'];
+    $listuser[] = $userImage;
+}
+else{
+    $listuser=$UserDB->getAllUserName();
+}
 $Image=new ImageDb();
 $likeDb=new LikeDb();
 $userinsession=$username;
+
 ?>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
@@ -215,6 +224,7 @@ if(isset($_POST['comments'])){
     </div>
 
     <?php
+
     foreach ($listuser as $item){
         $user1=$item;
         $list=$Image->geImageByUN($user1);
@@ -226,17 +236,6 @@ if(isset($_POST['comments'])){
                 $list=$Image->getImageByUNDESC($user1);
             }
         }
-
-        if(isset($_POST['searchImage']))
-        {
-            $imageName = $_POST['searchImage'];
-
-
-            $list = $Image->getAllImageByName($imageName);
-        }
-
-
-
 
         foreach ($list as $img) {
         $url = $img->getUrl();

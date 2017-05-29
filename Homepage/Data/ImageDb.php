@@ -83,6 +83,9 @@ Class ImageDb{
         return $list;
     }
 
+
+
+
     public function updateDescription($imageID , $description)
     {
         $conn = new Connection();

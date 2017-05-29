@@ -41,7 +41,7 @@ if(isset($_POST['txtUsername']))
         }
         if($conn->query($sql) == false)
         {
-            if(mysqli_errno() == 0)
+            if(mysqli_errno() == 0 )
             {
                 header("location:Gallery/index.php");
                 $_SESSION['username'] = $email;

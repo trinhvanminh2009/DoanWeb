@@ -5,6 +5,8 @@ window.fbAsyncInit = function() {
         version: 'v2.9'
     });
 };
+//$appId = '415135538841889';
+//$appSecret = '62daf59fb534cb37d864ea99a432755d';
 
 
 function login() {
