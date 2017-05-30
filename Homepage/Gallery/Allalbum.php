@@ -171,7 +171,7 @@ $listUsername=$UserDB->getAllUserName();
                 $createtor=$album->getUsername();
                 $albumurl=$albumDb->getFristImageFromAlbum($albumID);
                 echo"    <div class=\"col-lg-3 col-md-6 col-xs-12\" id='containerAlbum'>
-                    <a href=\"AlbumDetail.php?albumId=$albumID&username=$username\" class=\"d-block mb-4 h-100\">
+                    <a href=\"AlbumDetailPublic.php?albumId=$albumID&username=$username\" class=\"d-block mb-4 h-100\">
                         <img class=\"img-fluid img-thumbnail\" id=\"imgalbum\"src=\"../../uploads/$itemUsername/$albumurl\" alt=\"Not Found\" style='width: 550px; height: 350px'>
                           <div class=\"overlay\">
                             <div class=\"text\"> <label>Album Name:</label>$albumName<br>

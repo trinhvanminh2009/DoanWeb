@@ -263,7 +263,7 @@ include_once "header.php"
                  <td ><a download='$imgId' href='../../uploads/$UserName/$url'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/download.png' style='width: 20px;height: 20px; margin-left: 50px'></a> </td>";?>
 
             <?php
-            echo "<td ><a  href='ImageInformation.php?id=$imgId&user=$UserName'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 60px'></a> </td>";
+            echo "<td ><a  href='ImageInformationExplorer.php?id=$imgId&user=$UserName'><img id='DownLoadimg$imgId' src='../../Homepage/Gallery/img/Info-24.png' style='width: 20px;height: 20px; margin-left: 60px'></a> </td>";
             ?>
 
             </tr>

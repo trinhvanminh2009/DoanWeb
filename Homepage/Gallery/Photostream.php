@@ -452,16 +452,17 @@ $userHeader=$test->getUserByUN("$usernameHeader");
                         </td>
                     </tr>
                    
-                    <td><label>$Decription</label></td>
+                   
                    
                     <tr>
-            
+                        <td></td>
+                        <td><div style='width:50px;display: block;float: left;'><label >$Decription</label></div></td>
                     </tr>
                 </table>
                 
                 ";
         echo " 
-          
+      
            <div class='container' style='background-color: white' id='v'>
             <div class='row'>
             <div class='col-md-3'>

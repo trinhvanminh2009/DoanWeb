@@ -406,7 +406,7 @@ if(isset($_POST['comments'])){
                 <div id='abc$imgId'style='width: 20%;height: 100px;padding-right: 35%'>
                 
                 <table align='center' style='margin-left: 30px'>
-                    <tr>
+                    <tr> 
                         <td>";?>
             <?php
             $avatarUpdate=$test->getAvatarByUserName($user1);
@@ -421,11 +421,11 @@ if(isset($_POST['comments'])){
                             $Date
                         </td>
                     </tr>
-                   
-                    <td><label>$Decription</label></td>
+                  
                    
                     <tr>
-            
+                        <td></td>
+                        <td><div style='width:50px;display: block;float: left;'><label >$Decription</label></div></td>
                     </tr>
                 </table>
                 
@@ -437,13 +437,11 @@ if(isset($_POST['comments'])){
            <div class='container' style='background-color: white' id='v'>
             <div class='row'>
             <div class='col-md-3'>
-                    <button onclick='showEditc()' id='showDiv' class='fa fa fa-times'>Edit Description</button>
+             
                     <div class='resume' id = 'edit'>
-                    <input type='text' placeholder='Enter your description here!'>
+         
                     </div>
                     <br>
-                    <button onclick='showEditc()'>Edit Description</button>
-                    <label>Text you comment here !</label>
                     <form method='post' id='commentform'>
                             <input type='hidden' name='CommentImageID' value='$imgId'>
                           <textarea placeholder=\"comment here\"  row='5' cols='45' name='comments' id='comments' display:none data-dismiss='modal'></textarea>
